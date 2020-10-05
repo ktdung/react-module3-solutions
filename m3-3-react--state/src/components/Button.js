@@ -1,13 +1,31 @@
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const Button = styled.button`
-  height: 40px;
-  background: #2b00d7;
+import { colors } from "./GlobalStyles";
+
+const Button = ({ onClickFunc, children, disabled }) => (
+  <Wrapper onClick={onClickFunc} disabled={disabled}>
+    {children}
+  </Wrapper>
+);
+
+const Wrapper = styled.button`
+  background: #fff;
+  border: 1px solid ${colors.fuchsia};
   border-radius: 4px;
-  border: none;
-  padding: 0px 20px;
-  font-size: 18px;
-  color: #fff;
+  color: ${colors.fuchsia};
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 16px 8px;
+  text-transform: uppercase;
+  margin: 8px;
+  width: 120px;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 `;
 
 export default Button;
