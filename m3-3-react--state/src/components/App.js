@@ -67,7 +67,7 @@ const App = () => {
         setWrongGuesses(newWrongGuesses);
         showBodyPart(bodyParts[newWrongGuesses.length - 1], colors.yellow);
       }
-      if (newWrongGuesses.length === 10) handleEndGame();
+      if (newWrongGuesses.length === bodyParts.length) handleEndGame();
     }
   };
 

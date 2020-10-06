@@ -12,7 +12,7 @@ const Keyboard = ({ handleGuess, usedLetters }) => (
       <LetterKey
         key={letter}
         letter={letter}
-        usedLetters={usedLetters}
+        isDisabled={usedLetters.includes(letter)}
         handleGuess={handleGuess}
       />
     ))}

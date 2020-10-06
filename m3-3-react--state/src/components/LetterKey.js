@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 import { colors } from "./GlobalStyles";
 
-const LetterKey = ({ letter, handleGuess, usedLetters }) => {
-  const isDisabled = usedLetters.includes(letter);
-
+const LetterKey = ({ letter, handleGuess, isDisabled }) => {
   return (
     <Wrapper onClick={() => handleGuess(letter)} disabled={isDisabled}>
       {letter}
